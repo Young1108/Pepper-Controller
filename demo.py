@@ -37,7 +37,7 @@ class PepperDemo:
     def __init__(self, ip_address, port=9559):
         self.robot = None
         self.robot = Pepper(ip_address, port)
-        self.robot.set_czech_language()
+        self.robot.set_english_language()
         self.photoName = None
         self.greetings = ["Good afternoon", "Hello", "Hi", "Hello everobody", "Welcome"]
         self.asks = ["May I photograph you?","May I take your picture?", "Do you want to make your picture?"]
@@ -102,7 +102,7 @@ class PepperDemo:
         """there is a modifiable grammar error sometimes occurred.
         In order to deal with it you should change language to english and back"""
         self.robot.set_english_language()
-        self.robot.set_czech_language()
+        # self.robot.set_czech_language()
 
     def run(self):
         self.dealWithRecoErrors()
@@ -110,6 +110,6 @@ class PepperDemo:
         self.recogniseAnswerAndDecide()
 
 if __name__ == "__main__":
-    pepperDemo = PepperDemo("10.37.1.232")
+    pepperDemo = PepperDemo("10.151.15.103")
     pepperDemo.run()
 

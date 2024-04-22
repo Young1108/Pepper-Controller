@@ -61,7 +61,7 @@ class MotionParser:
         for instr in workout:
             args = []
             for arg in instr[2]:
-                if type(arg) == unicode:
+                if type(arg) == str:
                     args.append(arg.encode("utf8"))
                 else:
                     args.append(arg)
@@ -71,7 +71,7 @@ class MotionParser:
             func(*args)
             
     def play_music(self, song):
-        qi.async(lambda: mp.robot.play_sound(song))
+        qi._async(lambda: mp.robot.play_sound(song))
 
     def stop_music(self):
         mp.robot.stop_sound()

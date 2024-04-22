@@ -127,7 +127,7 @@ def basic_demo(robot):
 
 if __name__ == "__main__":
     # Press Pepper's chest button once and he will tell you his IP address
-    ip_address = "10.37.1.100"
+    ip_address = "10.151.15.103"
     port = 9559
     robot = Pepper(ip_address, port)
     basic_demo(robot)

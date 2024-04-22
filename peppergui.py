@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 from motion_parser import MotionParser
 import os
-try:
-  import Tkinter as tk
-  import ttk
-except:
-    import tkinter as tk
-    import tkinter.ttk as ttk
+import tkinter as tk
+from tkinter import ttk
+
 import pygubu
 from PIL import Image, ImageTk
 from pepper.robot import Pepper
@@ -143,8 +140,9 @@ class PepperControllerApp:
         output.config(text=text)
 
     def change_language(self, lang):
-        fncts = {"cz": self.robot.set_czech_language,
-                 "en": self.robot.set_english_language}
+        fncts = {"en": self.robot.set_english_language,
+                "cz": self.robot.set_czech_language
+                 }
         fncts[lang]()
         self.language = lang
 

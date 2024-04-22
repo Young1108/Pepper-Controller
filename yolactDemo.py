@@ -228,7 +228,7 @@ def constantlyCheckObjects(robot):
 
 
 if __name__ == "__main__":
-    robot = Pepper("10.37.1.237")
+    robot = Pepper("10.151.15.103")
     args = parse_args()
     #robot.autonomous_life_off()
     robot.set_english_language()

@@ -61,7 +61,7 @@ class Pepper:
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.load_system_host_keys()
-        ssh.connect(hostname=self.ip_address, username="nao", password="nao")
+        ssh.connect(hostname=self.ip_address, username="nao", password="bigdata905")
         self.scp = SCPClient(ssh.get_transport())
         self.app = qi.Application(["ReactToTouch","HumanGreeter", "--qi-url=" + connection_url])
         self.human_reco = HumanGreeter(self.app)
@@ -112,9 +112,9 @@ class Pepper:
     def stop_video(self):
         self.tablet_service.stopVideo()
 
-    def set_czech_language(self):
-        self.dialog_service.setLanguage("Czech")
-        print("Czech language was set up")
+    # def set_czech_language(self):
+    #     self.dialog_service.setLanguage("Czech")
+    #     print("Czech language was set up")
 
     def set_english_language(self):
         self.dialog_service.setLanguage("English")
@@ -685,12 +685,12 @@ class Pepper:
 
         :Example:
 
-        >>> pepper = Pepper("10.37.1.227")
+        >>> pepper = Pepper("10.151.15.103")
         >>> pepper.share_localhost("/Users/michael/Desktop/Pepper/tmp_pepper/")
         >>> pepper.subscribe_camera("camera_top", 2, 30)
         >>> while True:
         >>>     pepper.show_tablet_camera("camera top")
-        >>>     pepper.tablet_show_web("http://10.37.2.241:8000/tmp_pepper/camera.png")
+        >>>     pepper.tablet_show_web("http://10.151.15.103:8000/tmp_pepper/camera.png")
 
         :param text: Question of the visual question answering
         :type text: string
